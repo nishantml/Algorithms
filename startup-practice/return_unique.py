@@ -25,4 +25,19 @@ def return_unique(lst):
     return uniqueLst
 
 
-print(return_unique([1, 9, 8, 8, 7, 6, 1, 6]))
+def return_unique_1(lst):
+    uniqueList = []
+    Hash = {}
+    for i in range(len(lst)):
+        if lst[i] not in Hash:
+            Hash[lst[i]] = 1
+        else:
+            Hash[lst[i]] += 1
+    for i in Hash:
+        if Hash[i] == 1:
+            uniqueList.append(i)
+    return uniqueList
+
+
+# print(return_unique([1, 9, 8, 8, 7, 6, 1, 6]))
+print(return_unique_1([1, 9, 8, 8, 7, 6, 1, 6]))
