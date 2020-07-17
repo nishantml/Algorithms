@@ -28,3 +28,15 @@ class Solution:
             # print(maxVal)
         newLst.append(-1)
         return newLst
+
+    def replaceElements1(self, arr: List[int]) -> List[int]:
+        """ Optimal Solution """
+        if len(arr) == 1:
+            return [-1]
+        newLst = []
+        newLst.append(max(arr[1:]))
+        for i in range(1, len(arr) - 1):
+            # print(max(arr[i+1:]))
+            newLst.append(max(arr[i + 1:]))
+        newLst.append(-1)
+        return newLst
