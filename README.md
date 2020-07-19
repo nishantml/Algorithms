@@ -4,5 +4,6 @@
 
 1. Basics 
 2. Array
+3. Linked List
 
 
