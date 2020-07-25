@@ -7,4 +7,5 @@
 3. Linked List
 4. Stack 
 5. Queue
+6. String
 
