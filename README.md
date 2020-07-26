@@ -8,4 +8,5 @@
 4. Stack 
 5. Queue
 6. String
+7. Searching and Sorting
 
