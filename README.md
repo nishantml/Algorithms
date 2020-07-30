@@ -9,4 +9,4 @@
 5. Queue
 6. String
 7. Searching and Sorting
-
+8. Divide and Conquer algorithms 
