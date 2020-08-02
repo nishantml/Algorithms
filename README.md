@@ -12,3 +12,4 @@
 8. Divide and Conquer algorithms 
 9. Greedy Algorithms
 10. Dynamic Programming
+11. Tree
