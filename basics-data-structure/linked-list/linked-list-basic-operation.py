@@ -84,6 +84,17 @@ class linked_list:
                 return val
             curr_index += 1
 
+    def middleElement(self):
+        middle = self.length//2;
+        curr_node = self.head;
+        curr_index = 0;
+        while curr_node is not None:
+            curr_node = curr_node.next;
+            if curr_index == middle:
+                return curr_node.data
+            curr_index += 1
+
+
     def traverseToIndex(self, index):
         if self.length <= index:
             return 'index out of bound'
@@ -111,6 +122,8 @@ myLst.append(3)
 myLst.append(4)
 myLst.append(5)
 myLst.append(6)
+myLst.append(7)
+myLst.append(8)
 print('2nd way to get Length of the list', myLst.length)
 # print('head node', myLst.head.next.data) // this is not the right way will get error when there is empty list
 # print('head node', myLst.headNode())
@@ -118,5 +131,6 @@ print('Print Linked List', myLst.display())
 print('Value at Linked List Index', myLst.traverseToIndex(0))
 # print('Value at Linked List Index', myLst.traverseToIndex(3))
 # print('Value at Linked List Index', myLst.traverseToIndex(4))
-print('Value deleted at Linked List Index 0 with value ', myLst.deleteAtIndex(3))
+# print('Value deleted at Linked List Index 0 with value ', myLst.deleteAtIndex(3))
 print('Print Linked List', myLst.display())
+print('Print middle element in Linked List', myLst.middleElement())
