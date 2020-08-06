@@ -13,3 +13,4 @@
 9. Greedy Algorithms
 10. Dynamic Programming
 11. Tree
+12. Heap
