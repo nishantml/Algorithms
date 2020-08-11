@@ -27,27 +27,58 @@ class Stack:
     def peek(self):
         return self.array[-1]
 
+    def getMin(self):
+        print(min(self.array))
+
     def reverse(self):
-        for i in range(self.length - 1):
-            temp = self.array[i]
-            self.array[i] = self.array[i + 1];
-            self.array[i + 1] = temp
+        left = 0
+        right = self.length-1;
+        '''Inplace replacement '''
+        while left < right:
+            self.array[left],self.array[right] = self.array[right],self.array[left]
+            left += 1
+            right -= 1
 
         self.lookup()
 
 
 myStack = Stack()
 print('Length of node is ->', myStack.length)
-myStack.push('google')
-myStack.push('gmail')
-myStack.push('check')
-myStack.push('facebook')
+myStack.push(1)
+myStack.push(2)
+myStack.push(3)
+myStack.push(4)
+myStack.push(5)
 myStack.lookup()
 print('Length of node is ->', myStack.length)
-print('Top node is ->', myStack.peek())
-print('Poped node is ->', myStack.pop())
+# print('Top node is ->', myStack.peek())
+# print('Poped node is ->', myStack.pop())
 myStack.lookup()
 print('Length of node is ->', myStack.length)
 print('\nStacked reversed ')
 myStack.reverse()
-print('\nTop node is ->', myStack.peek())
+# print('\nTop node is ->', myStack.peek())
+myStack.getMin()
+
+"""
+
+Revsrse Stack 
+
+Stack items 
+E - 5
+L - 4
+G - 3
+O - 2
+O - 1
+G - 0
+
+
+after reverse 
+G - 5
+O - 4
+O - 3
+G - 2
+L - 1
+E - 0
+
+"""
