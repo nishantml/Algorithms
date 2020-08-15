@@ -65,6 +65,42 @@ class DoublyLinkedList:
                     return self
             curr_node = curr_node.next
 
+    def insert_after_node(self, key, data):
+        curr_node = self.head
+
+        while curr_node:
+            if curr_node.data == key and curr_node.next is None:
+                self.append(data)
+                return self
+            elif curr_node.data == key:
+                new_node = Node(data)
+                nxt = curr_node.next
+                curr_node.next = new_node
+                new_node.next = nxt
+                new_node.prev = curr_node
+                nxt.prev = new_node
+                return self
+            curr_node = curr_node.next
+
+    def insert_before_node(self, key, data):
+        curr_node = self.head
+
+        while curr_node:
+            if curr_node.data == key and curr_node.prev is None:
+                self.prepend(data)
+                return self
+            elif curr_node.data == key:
+                new_node = Node(data)
+                prev = curr_node.prev
+
+                prev.next = new_node
+                curr_node.prev = new_node
+
+                new_node.prev = prev
+                new_node.next = curr_node
+
+            curr_node = curr_node.next
+
     def lookup(self):
         curr_node = self.head
         while curr_node:
@@ -79,6 +115,10 @@ myDOList.append(2)
 myDOList.append(3)
 myDOList.append(4)
 myDOList.prepend(-1)
-myDOList.delete(2)
+# myDOList.delete(2)
+# myDOList.insert_after_node(4, 5)
+# myDOList.insert_after_node(-1, 5)
+myDOList.insert_before_node(-1, 5)
+myDOList.insert_before_node(3, 5)
 
 myDOList.lookup()
