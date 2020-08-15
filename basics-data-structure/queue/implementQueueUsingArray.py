@@ -16,6 +16,16 @@ class Queue:
         self.length -= 1
         return poped
 
+    def reverse(self):
+        left = 0;
+        right = self.length - 1;
+        while left < right:
+            self.array[left], self.array[right] = self.array[right], self.array[left]
+            left += 1
+            right -= 1
+
+        return self
+
     # array traverse
     def lookup(self):
         for val in self.array:
@@ -32,9 +42,13 @@ myQueue.enqueue(2)
 myQueue.enqueue(3)
 myQueue.enqueue(4)
 myQueue.lookup()
-print('\nLength of array is ->', myQueue.length)
-print('\nFirst in array is ->', myQueue.peek())
-print('\ndequeue value is ->', myQueue.dequeue())
+print('\n After reverse')
+myQueue.reverse()
 myQueue.lookup()
-print('\nLength of array is ->', myQueue.length)
-print('\nFirst in array is ->', myQueue.peek())
+# print('\nLength of array is ->', myQueue.length)
+# print('\nFirst in array is ->', myQueue.peek())
+# print('\ndequeue value is ->', myQueue.dequeue())
+# myQueue.lookup()
+# print('\nLength of array is ->', myQueue.length)
+# print('\nFirst in array is ->', myQueue.peek())
+print('\n')
