@@ -26,6 +26,19 @@ class Queue:
 
         return self
 
+    def reverseTillKElement(self, k):
+        if k > self.length:
+            print('index out of bound')
+            return
+        left = 0;
+        right = k - 1;
+        while left < right:
+            self.array[left], self.array[right] = self.array[right], self.array[left]
+            left += 1
+            right -= 1
+
+        return self
+
     # array traverse
     def lookup(self):
         for val in self.array:
@@ -43,7 +56,8 @@ myQueue.enqueue(3)
 myQueue.enqueue(4)
 myQueue.lookup()
 print('\n After reverse')
-myQueue.reverse()
+# myQueue.reverse()
+myQueue.reverseTillKElement(3)
 myQueue.lookup()
 # print('\nLength of array is ->', myQueue.length)
 # print('\nFirst in array is ->', myQueue.peek())
