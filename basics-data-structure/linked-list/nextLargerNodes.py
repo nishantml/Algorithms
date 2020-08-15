@@ -25,17 +25,20 @@ Output: [7,9,9,9,0,5,0,0]
 
 """
 
+from typing import List
+
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
 class Solution:
     def nextLargerNodes(self, head: ListNode) -> List[int]:
         curr_main_node = head
-        
-        
+
         while curr_main_node is not None:
             if curr_main_node.next is None:
                 # print('end')
@@ -44,30 +47,27 @@ class Solution:
             # print('outside ->',curr_main_node.val)
             maxVal = curr_main_node.val
             curr_node = curr_main_node.next
-            while curr_node is not None :
+            while curr_node is not None:
                 # print('inside ->',curr_node.val)
                 if maxVal < curr_node.val:
                     maxVal = curr_node.val
                     break;
-                    
+
                 curr_node = curr_node.next
-                
-            if  curr_main_node.val == maxVal:
+
+            if curr_main_node.val == maxVal:
                 curr_main_node.val = 0
             else:
                 curr_main_node.val = maxVal
             curr_main_node = curr_main_node.next
-            
+
         new_node = head
-        
+
         # return new_node
-        lst = []   
-        while new_node is not None :
+        lst = []
+        while new_node is not None:
             # print(new_node.val)
             lst.append(new_node.val)
             new_node = new_node.next
-            
+
         return lst
-            
-            
-        
