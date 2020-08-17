@@ -37,6 +37,29 @@ class CircularLinkedList:
 
         self.head = new_node
 
+    def delete(self, key):
+        if self.head is None:
+            return
+        if self.head.next == self.head and self.head.data == key:
+            self.head = None
+        elif self.head.data == key:
+            curr_node = self.head
+            while curr_node.next != self.head:
+                curr_node = curr_node.next
+            curr_node.next = self.head.next
+            self.head = self.head.next
+
+        else:
+            curr_node = self.head
+            prev = None
+            while curr_node.next != self.head:
+                prev = curr_node
+                curr_node = curr_node.next
+                # print('ss',curr_node.data)
+                if curr_node.data == key:
+                    prev.next = curr_node.next
+                    curr_node = curr_node.next
+
     def lookup(self):
         curr_node = self.head
 
@@ -48,10 +71,11 @@ class CircularLinkedList:
 
 
 circularLls = CircularLinkedList()
-circularLls.append(1)
-circularLls.append(2)
-circularLls.append(3)
-circularLls.append(4)
-circularLls.prepend(0)
-circularLls.prepend(-1)
+# circularLls.append(1)
+# circularLls.append(2)
+# circularLls.append(3)
+# circularLls.append(4)
+# circularLls.prepend(0)
+# circularLls.prepend(-1)
+circularLls.delete(1)
 circularLls.lookup()
