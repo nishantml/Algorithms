@@ -32,6 +32,29 @@ class SinglyLinkedList:
             new_node.next = curr_node
             self.head = new_node
 
+    def delete(self, key):
+        if self.head is None:
+            return
+        if self.head.data == key and self.head.next is None:
+            self.head = None
+
+        elif self.head.data == key:
+            self.head = self.head.next
+        else:
+            curr_node = self.head
+            prev = None
+            while curr_node.next is not None:
+                prev = curr_node
+                curr_node = curr_node.next
+                # print('prev', prev.data)
+                # print('curr_node', curr_node.data)
+                if curr_node.data == key:
+                    if curr_node.next is None:
+                        prev.next = None
+                    else:
+                        prev.next = curr_node.next
+                        curr_node = curr_node.next
+
     def lookup(self):
         curr_node = self.head
 
@@ -45,7 +68,8 @@ sLinkedList.append(1)
 sLinkedList.append(2)
 sLinkedList.append(3)
 sLinkedList.append(4)
-sLinkedList.prepend(0)
-sLinkedList.prepend(23)
+# sLinkedList.prepend(0)
+# sLinkedList.prepend(23)
+sLinkedList.delete(4)
 
 sLinkedList.lookup()
