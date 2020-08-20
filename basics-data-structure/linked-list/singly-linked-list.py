@@ -55,6 +55,17 @@ class SinglyLinkedList:
                         prev.next = curr_node.next
                         curr_node = curr_node.next
 
+    def search(self, key):
+        curr_node = self.head
+        count = 0
+        while curr_node:
+            if curr_node.data == key:
+                print('Data Found at Index ', count)
+                return
+            count += 1
+            curr_node = curr_node.next
+        print('Data not found')
+
     def lookup(self):
         curr_node = self.head
 
@@ -70,6 +81,6 @@ sLinkedList.append(3)
 sLinkedList.append(4)
 # sLinkedList.prepend(0)
 # sLinkedList.prepend(23)
-sLinkedList.delete(4)
+sLinkedList.search(4)
 
 sLinkedList.lookup()
