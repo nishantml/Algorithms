@@ -8,7 +8,6 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
-        self.length = 0
 
     def append(self, data):
         new_node = Node(data)
@@ -66,6 +65,30 @@ class SinglyLinkedList:
             curr_node = curr_node.next
         print('Data not found')
 
+    def __len__(self):
+        curr_node = self.head
+        count = 0
+        while curr_node:
+            count += 1
+            curr_node = curr_node.next
+        return count
+
+    def middle_element(self):
+        middle = len(self) // 2
+        return self.traverse_to_index(middle)
+
+    def traverse_to_index(self, index):
+        if index >= len(self):
+            return -1
+        count = 0
+        curr_node = self.head
+        while curr_node:
+            if count == index:
+                return curr_node.data
+            curr_node = curr_node.next
+            count += 1
+        return -1
+
     def lookup(self):
         curr_node = self.head
 
@@ -79,8 +102,11 @@ sLinkedList.append(1)
 sLinkedList.append(2)
 sLinkedList.append(3)
 sLinkedList.append(4)
+sLinkedList.append(6)
 # sLinkedList.prepend(0)
 # sLinkedList.prepend(23)
 sLinkedList.search(4)
+print(len(sLinkedList))
+print('middle element-> ', sLinkedList.middle_element())
 
 sLinkedList.lookup()
