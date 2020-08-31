@@ -49,6 +49,14 @@ class BST:
 
         return False
 
+    # inoder traversal of the BST
+    def inorder(self, root):
+        currentNode = root
+        if root:
+            self.inorder(root.left)
+            print(root.val)
+            self.inorder(root.right)
+
 
 bst = BST()
 bst.insert(1)
@@ -59,3 +67,5 @@ bst.insert(5)
 bst.insert(6)
 print('Search {10} in bst', bst.lookup(10))
 print('Search {21} in bst', bst.lookup(21))
+print('\nInorder traverse of BST')
+bst.inorder(bst.root)
