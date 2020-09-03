@@ -70,6 +70,25 @@ class BST:
             print(root.val)
             self.inorder(root.right)
 
+    def breadthFirstSearch(self):
+        """Breadth First Search"""
+        currentNode = self.root
+        queue = []
+        bfsList = []
+        queue.append(currentNode)
+
+        while len(queue) > 0:
+            currentNode = queue.pop(0)
+            #             print(currentNode.val)
+            bfsList.append(currentNode.val)
+
+            if currentNode.left:
+                queue.append(currentNode.left)
+            if currentNode.right:
+                queue.append(currentNode.right)
+
+        return bfsList
+
 
 bst = BST()
 # bst.insert(1)
