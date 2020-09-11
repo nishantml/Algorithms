@@ -69,6 +69,7 @@ class BST:
             self.inorder(root.left)
             print(root.val)
             self.inorder(root.right)
+            
 
     def breadthFirstSearch(self):
         """Breadth First Search"""
