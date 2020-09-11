@@ -1,3 +1,10 @@
+"""
+Link -> https://www.geogebra.org/m/ExvvrBbR
+Josephus Problem
+
+"""
+
+
 class Node:
     def __init__(self, data):
         self.data = data

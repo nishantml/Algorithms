@@ -12,7 +12,7 @@
 8. Divide and Conquer algorithms 
 9. Greedy Algorithms
 10. Dynamic Programming
-11. Tree
+11. BT
 12. Heap
 13. Hashing
 14. Graph
