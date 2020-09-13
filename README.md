@@ -1,4 +1,4 @@
-# Algorithms
+# Data Structure And Algorithms
 
 100 days of code
 
