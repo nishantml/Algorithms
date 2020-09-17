@@ -89,6 +89,16 @@ class SinglyLinkedList:
             count += 1
         return -1
 
+    def count_occurance_of_number(self, num):
+        curr_node = self.head
+
+        count = 0
+        while curr_node:
+            if curr_node.data == num:
+                count += 1
+            curr_node = curr_node.next
+        return count
+
     def lookup(self):
         curr_node = self.head
 
@@ -103,10 +113,14 @@ sLinkedList.append(2)
 sLinkedList.append(3)
 sLinkedList.append(4)
 sLinkedList.append(6)
+sLinkedList.append(6)
+sLinkedList.append(6)
+sLinkedList.append(6)
 # sLinkedList.prepend(0)
 # sLinkedList.prepend(23)
-sLinkedList.search(4)
-print(len(sLinkedList))
-print('middle element-> ', sLinkedList.middle_element())
+# sLinkedList.search(4)
+# print(len(sLinkedList))
+# print('middle element-> ', sLinkedList.middle_element())
+print(sLinkedList.count_occurance_of_number(6))
 
-sLinkedList.lookup()
+# sLinkedList.lookup()
