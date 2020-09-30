@@ -9,5 +9,5 @@ fun1(3)
 
 """
 In Above First printing was done the recursive call was made
-Printing was done at calling time that before the funcation was called 
+Printing was done at calling time that before the function was called 
 """
