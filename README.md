@@ -1,6 +1,5 @@
 # Data Structure And Algorithms
 
-100 days of code
 
 1. Basics Practice
 2. Array
