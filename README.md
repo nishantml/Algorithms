@@ -1,8 +1,7 @@
 # Data Structure And Algorithms
 
-100 days of code
 
-1. Basics 
+1. Basics Practice
 2. Array
 3. Linked List
 4. Stack 
