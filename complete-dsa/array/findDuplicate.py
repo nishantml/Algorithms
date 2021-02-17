@@ -31,13 +31,13 @@ from typing import List
 
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        hash = []
+        Hash = dict()
 
-        for i in range(len(nums)):
-            if nums[i] in hash:
-                return nums[i]
+        for num in nums:
+            if num in Hash:
+                return num
             else:
-                hash.append(nums[i])
+                Hash[num] = 1
 
 
 sol = Solution()
